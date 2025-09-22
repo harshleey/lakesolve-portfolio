@@ -128,7 +128,14 @@ nav {
   background-color: rgba(255, 255, 255, 0.2);
   z-index: 999;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.479);
+  /* backdrop-filter: blur(10px); */
+
+  /* Glassmorphism */
+  -webkit-backdrop-filter: blur(10px); /* Safari/iOS */
   backdrop-filter: blur(10px);
+
+  /* Fallback for unsupported devices */
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .nav__logo .logo {
@@ -500,9 +507,16 @@ nav {
   background-color: rgba(255, 255, 255, 0.2);
   z-index: 999;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.479);
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
   opacity: 0;
   border-bottom-left-radius: 100%;
+
+  /* Glassmorphism */
+  -webkit-backdrop-filter: blur(10px); /* Safari/iOS */
+  backdrop-filter: blur(10px);
+
+  /* Fallback for unsupported devices */
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 #close-btn {

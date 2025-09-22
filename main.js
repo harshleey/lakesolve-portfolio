@@ -22,6 +22,14 @@ sidebarLinks.forEach((link) => {
   });
 });
 
+// Auto-close sidebar on screen resize
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 700) {
+    sideBar.classList.remove("open-sidebar");
+    sideBar.classList.add("close-sidebar");
+  }
+});
+
 const scrollRevealOption = {
   distance: "50px",
   origin: "bottom",
