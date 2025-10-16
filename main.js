@@ -2,6 +2,58 @@ const sideBar = document.getElementById("sidebar");
 const menu = document.getElementById("menu-btn");
 const closeIcon = document.getElementById("close-btn");
 const sidebarLinks = sideBar.querySelectorAll("a");
+const contactForm = document.getElementById("contact-form");
+const formStatus = document.getElementById("form-status");
+const sendButton = document.querySelector(".contact__form__btn");
+const btnText = sendButton.querySelector(".btn-text");
+
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // --- Button loading state ---
+  sendButton.disabled = true;
+  btnText.textContent = "Sending...";
+  sendButton.classList.add("loading");
+
+  formStatus.style.display = "block";
+  formStatus.style.opacity = "1";
+  formStatus.style.color = "#374151";
+  formStatus.textContent = "Sending message...";
+
+  emailjs
+    .sendForm("service_2evgtn4", "template_8qsplu1", this)
+    .then(() => {
+      // Success feedback
+      formStatus.style.color = "green";
+      formStatus.textContent = "✅ Message sent successfully!";
+      contactForm.reset();
+
+      // Restore button
+      sendButton.disabled = false;
+      btnText.textContent = "Send Message";
+      sendButton.classList.remove("loading");
+
+      // Fade out success message after 4s
+      setTimeout(() => {
+        formStatus.style.opacity = "0";
+      }, 4000);
+    })
+    .catch((error) => {
+      console.error("EmailJS Error:", error);
+      formStatus.style.color = "red";
+      formStatus.textContent = "❌ Failed to send message. Please try again.";
+
+      // Restore button
+      sendButton.disabled = false;
+      btnText.textContent = "Send Message";
+      sendButton.classList.remove("loading");
+
+      // Fade out error message after 4s
+      setTimeout(() => {
+        formStatus.style.opacity = "0";
+      }, 4000);
+    });
+});
 
 // Remove any animation classes on page load
 window.addEventListener("DOMContentLoaded", function () {

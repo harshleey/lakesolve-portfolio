@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>
+
     <nav>
       <div class="nav__header">
         <div class="nav__logo">
@@ -76,7 +80,7 @@
       <h2 class="section__header">Selected Projects</h2>
       <div class="portfolio__grid">
         <div class="portfolio__card">
-          <img src="./images/lekan-cross-border.png" alt="" />
+          <img src="./images/sm-img.png" alt="" />
           <div class="portfolio__card__content">
             <h5 class="portfolio__card_subheader">UI/UX DESIGN</h5>
             <h4 class="portfolio__card_header">
@@ -111,7 +115,7 @@
             </p>
 
             <button class="btn portfolio__card__btn">
-              <a href="#">
+              <a href="https://befittingproperties.com/" target="_blank">
                 View project
                 <i class="ri-arrow-right-line"></i>
               </a>
@@ -131,12 +135,12 @@
               focus on simplicity and visual feedback.
             </p>
 
-            <button class="btn portfolio__card__btn">
+            <!-- <button class="btn portfolio__card__btn">
               <a href="#">
                 View project
                 <i class="ri-arrow-right-line"></i>
               </a>
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
@@ -151,17 +155,12 @@
       </p>
 
       <div class="case__flex">
-        <div class="case__images case__right__flex">
+        <div class="case__image__wrapper">
           <img
-            src="./images/spendit-app-img.png"
+            src="./images/spendit-app-mobile.png"
             alt=""
-            class="spendit__image"
+            class="case__image"
           />
-
-          <div class="case__mobile__images">
-            <img src="./images//spendit-mobile-1.png" alt="" />
-            <img src="./images//spendit-mobile-2.png" alt="" />
-          </div>
         </div>
 
         <div class="case__content">
@@ -211,7 +210,10 @@
           </div>
 
           <button class="btn">
-            <a href="#">
+            <a
+              href="https://www.figma.com/proto/vvPW8rlPba2LlOmJa2anfe/Case-Studies?node-id=1-15&t=TpgblnPWqw76u7lk-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+              target="_blank"
+            >
               View full case study
               <i class="ri-arrow-right-line"></i>
             </a>
@@ -219,18 +221,9 @@
         </div>
       </div>
 
-      <div class="case__flex">
-        <div class="case__images case__right__flex">
-          <!-- <img
-            src="./images/spendit-app-img.png"
-            alt=""
-            class="spendit__image"
-          /> -->
-
-          <!-- <div class="case__mobile__images">
-            <img src="./images//spendit-mobile-1.png" alt="" />
-            <img src="./images//spendit-mobile-2.png" alt="" />
-          </div> -->
+      <div class="case__flex cosub__reverse">
+        <div class="case__image__wrapper">
+          <img src="./images/cosub-app-phone.png" alt="" class="case__image" />
         </div>
 
         <div class="case__content">
@@ -256,8 +249,8 @@
           <div class="case__description">
             <h5>Challenge</h5>
             <p>
-              With rising subscription costs in Nigeria and limited multi-user
-              management options, users struggle to:
+              With rising subscription costs in Nigeria and limited
+              <br />multi-user management options, users struggle to:
             </p>
 
             <ul>
@@ -293,7 +286,10 @@
           </div>
 
           <button class="btn">
-            <a href="#">
+            <a
+              href="https://www.figma.com/proto/vvPW8rlPba2LlOmJa2anfe/Case-Studies?node-id=2-977&t=pEw3eUdjCHsdZSZU-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1s"
+              target="_blank"
+            >
               View full case study
               <i class="ri-arrow-right-line"></i>
             </a>
@@ -481,31 +477,58 @@
             <div class="contact__email__flex">
               <!-- email icon -->
               <img src="./images//email-icon.svg" alt="" class="email__icon" />
-              <p class="contact__email">hello@olamilekan.design</p>
+              <p class="contact__email">lakesolve@gmail.com</p>
             </div>
 
             <div class="connect__details">
               <h5 class="connect__header">Connect</h5>
               <div class="connect__socials">
-                <a href="">Twitter</a>
-                <a href="">Dribble</a>
-                <a href="">LinkedIn</a>
+                <a href="http://X.com/lakesolve" target="_blank">Twitter</a>
+                <a href="http://dribbble.com/lakesolve" target="_blank"
+                  >Dribble</a
+                >
+                <a
+                  href="https://www.linkedin.com/in/olamilekan-muhammed/"
+                  target="_blank"
+                  >LinkedIn</a
+                >
               </div>
             </div>
           </div>
           <div class="contact__form">
-            <p>Name</p>
-            <input placeholder="" type="full name" />
+            <form id="contact-form">
+              <p>Name</p>
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+              />
 
-            <p>Email</p>
-            <input placeholder="" type="Contact" />
+              <p>Email</p>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
 
-            <p>Message</p>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+              <p>Message</p>
+              <textarea
+                name="message"
+                cols="30"
+                rows="10"
+                placeholder="Your message..."
+                required
+              ></textarea>
 
-            <button class="contact__form__btn">
-              Send Message <i class="ri-send-plane-line"></i>
-            </button>
+              <button type="submit" class="contact__form__btn">
+                <span class="btn-text">Send Message</span>
+                <i class="ri-send-plane-line"></i>
+              </button>
+
+              <p id="form-status" class="form-status"></p>
+            </form>
           </div>
         </div>
       </div>
@@ -534,5 +557,17 @@
     </footer>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("FuXLKBkLtZq5liopH");
+      })();
+
+      window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        preloader.classList.add("hide");
+        setTimeout(() => preloader.remove(), 500);
+      });
+    </script>
   </body>
 </html>
